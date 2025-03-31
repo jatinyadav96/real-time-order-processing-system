@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "order-service"
+name = "payment-service"
 version = "0.1.0"
-description = "Order Service for Real-Time Order Processing System"
+description = "Payment Service for Real-Time Order Processing System"
 authors = ["Jatin Yadav <jatinyadav154@gmail.com>"]
-packages = [{include = "app"}]  
+packages = [{include = "app"}]
 
 [tool.poetry.dependencies]
-python = ">=3.13"  
+python = ">=3.13"
 fastapi = "^0.115.12"
 uvicorn = "^0.34.0"
 aiokafka = "^0.12.0"
@@ -16,12 +16,13 @@ python-dotenv = "^1.1.0"
 greenlet = "^3.1.1"
 
 [tool.poe.tasks]
-runserver = "uvicorn app.main:app --reload --port 8001"
+runserver = "uvicorn app.main:app --reload --port 8002"
 
 
 [tool.poetry.group.dev.dependencies]
 poethepoet = "^0.33.1"
 
+
 [build-system]
-requires = ["poetry-core>=2.0.0"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
